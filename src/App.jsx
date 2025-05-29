@@ -8,7 +8,7 @@ import Fouter from './layouts/fouter';
 const App = () => {
   return (
     <>
-   <Nave/>
+   {/* <Nave/> */}
     <Routes>
       <Route path="/" element={<Home />} />
     </Routes>
