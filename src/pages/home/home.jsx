@@ -112,9 +112,11 @@ const Home = () => {
                                 Je suis passionnée par la technologie, le design, et l'apprentissage continu.
                                 Mon objectif est de continuer à me perfectionner dans le développement web et de participer à des projets innovants, que ce soit en équipe ou en freelance.
                             </p>
-                            <button className='mt-6 px-8 py-3 bg-white text-black rounded-md self-start hover:bg-[#60bd55] hover:text-white transition-colors duration-300 shadow-md'>
-                                Discover my work <span className='ml-2'>&darr;</span>
-                            </button>
+                            <a href="#project" className="mt-6 self-start">
+                                <button className='px-8 py-3 bg-white text-black rounded-md self-start hover:bg-[#60bd55] hover:text-white transition-colors duration-300 shadow-md'>
+                                    Discover my work <span className='ml-2'>&darr;</span>
+                                </button>
+                            </a>
                         </div>
                         <div className='w-full md:w-1/2 flex justify-center md:justify-end mt-8 md:mt-0'>
                             <img className='w-[80%] md:w-[30vw] h-auto rounded-lg object-cover shadow-lg border border-gray-700' src={logo} alt="About Me" />
