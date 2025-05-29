@@ -33,12 +33,12 @@ const Home = () => {
 
                 <div className='absolute top-[55vh] left-[50vh] flex flex-col gap-[45vh]'>
 
-                    <div className='text-[4vh]'>
+                    <div id='home' className='text-[4vh]'>
                         <p>I'm elroumaissaa aalam</p>
                         <p>devloper</p>
                     </div>
 
-                    <div className='flex justify-between h-[55vh]  w-[70vw]  '>
+                    <div id='about' className='flex justify-between h-[55vh]  w-[70vw]  '>
                         <div>
                             <img className='w-[20vw] h-[43vh] rounded-lg border border-black' src={logo} alt="" />
                         </div>
@@ -48,7 +48,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className='text-[4vh] flex flex-col gap-10 '>
+                    <div id='project' className='text-[4vh] flex flex-col gap-10 '>
                         <h1>My Projects</h1>
 
 
@@ -89,7 +89,7 @@ const Home = () => {
                     
                     
                     
-                    <form ref={form} onSubmit={sendEmail} className='flex flex-col items-center justify-center h-[100vh] ' >
+                    <form ref={form} onSubmit={sendEmail} id='contact' className='flex flex-col items-center justify-center h-[100vh] ' >
                     <div className=' w-[55vw]  h-[50vh] bg-white/30  shadow-2xl  rounded-xl p-4 '>
                         <div className='flex  flex-col  items-center justify-center  gap-[10vh] '>
                       <div className='flex gap-10' >

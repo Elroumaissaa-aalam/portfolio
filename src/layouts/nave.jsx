@@ -1,8 +1,37 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../assets/images/logo.jpg"
 
 const Nave = () => {
+    useEffect(() => {
+        const handleSmoothScroll = (e) => {
+            const targetId = e.currentTarget.getAttribute('href');
+            if (targetId && targetId.startsWith('#')) {
+                e.preventDefault();
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center' // This will attempt to center the element
+                    });
+                }
+            }
+        };
+
+        // Add event listeners to the navigation links
+        const navLinks = document.querySelectorAll('.text-start a[href^="#"]');
+        navLinks.forEach(link => {
+            link.addEventListener('click', handleSmoothScroll);
+        });
+
+        // Clean up event listeners on component unmount
+        return () => {
+            navLinks.forEach(link => {
+                link.removeEventListener('click', handleSmoothScroll);
+            });
+        };
+    }, []); // Empty dependency array means this effect runs once after the initial render
+
     return (
         <>
         <div className='z-40 absolute'>
@@ -74,10 +103,10 @@ const Nave = () => {
 
 
                     <nav className=' text-[3vh] flex gap-10 text-start'>
-                        <Link to={"/"} className='  hover:text-[#60bd55] '>home</Link>
-                        <Link to={"/"} className='hover:text-[#60bd55] '>about</Link>
-                        <Link to={"/"} className='hover:text-[#60bd55] '>projet</Link>
-                        <Link to={"/"} className='hover:text-[#60bd55] '>contact</Link>
+                        <a href='#home' className='  hover:text-[#60bd55] '>home</a>
+                        <a href='#about' className='hover:text-[#60bd55] '>about</a>
+                        <a href='#project' className='hover:text-[#60bd55] '>projet</a>
+                        <a href='#contact' className='hover:text-[#60bd55] '>contact</a>
                     </nav>
                 </div>
 
